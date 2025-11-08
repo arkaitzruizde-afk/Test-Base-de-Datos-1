@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Examen: Bases de Datos - Examen interactivo</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#1e90ff;--muted:#94a3b8;--ok:#22c55e;--bad:#ef4444}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:linear-gradient(180deg,#071020, #081022); color:#e6eef8; margin:0; padding:24px}
+    .container{max-width:900px;margin:0 auto}
+    header{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+    h1{font-size:22px;margin:0}
+    p.lead{margin:0;color:var(--muted)}
+    .card{background:var(--card);border-radius:12px;padding:18px;margin:18px 0; box-shadow: 0 6px 20px rgba(2,6,23,0.6)}
+    .qnum{font-weight:600;color:var(--accent)}
+    .question{margin:8px 0 12px}
+    .opts{display:flex;flex-direction:column;gap:8px}
+    label.opt{display:flex;gap:10px;align-items:center;background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;cursor:pointer}
+    input[type=radio]{accent-color:var(--accent)}
+    .controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    button{background:var(--accent);border:none;color:white;padding:10px 14px;border-radius:8px;cursor:pointer}
+    button.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+    .result{margin-top:12px;padding:12px;border-radius:8px}
+    .correct{background:rgba(34,197,94,0.12);border-left:4px solid var(--ok);color:var(--ok)}
+    .incorrect{background:rgba(239,68,68,0.08);border-left:4px solid var(--bad);color:var(--bad)}
+    .summary{display:flex;justify-content:space-between;gap:12px;align-items:center}
+    .small{font-size:13px;color:var(--muted)}
+    .explanation{margin-top:8px;color:var(--muted);font-size:13px}
+    nav.tests{display:flex;gap:6px;flex-wrap:wrap}
+    nav.tests button{padding:6px 8px;font-size:13px}
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+    .badge{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:999px;font-weight:600}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Examen interactivo: Bases de Datos</h1>
+        <p class="lead">Incluye los tests que me pasaste. Marca tus respuestas y pulsa "Corregir examen" para ver nota, aciertos y explicaciones.</p>
+      </div>
+      <div style="margin-left:auto;text-align:right">
+        <div class="badge">Usuario: Arka</div>
+      </div>
+    </header>
+
+    <nav class="tests card">
+      <strong class="small">Ir a:</strong>
+      <button onclick="scrollToTest('tema1')">Tema 1 - Intro</button>
+      <button onclick="scrollToTest('test2')">Test 2 - Modelado</button>
+      <button onclick="scrollToTest('test3')">Test 3 - Transformación</button>
+      <button onclick="scrollToTest('test4')">Test 4 - Normalización</button>
+    </nav>
+
+    <form id="examForm">
+
+      <!-- TEMA 1 -->
+      <section id="tema1" class="card">
+        <div class="summary"><div><strong>TEMA 1: Introducción a las bases de datos</strong></div><div class="small">9 preguntas</div></div>
+
+        <!-- Q1 -->
+        <div class="questionBlock">
+          <div class="qnum">1.</div>
+          <div class="question">La implantación de un sistema de bases de datos es ________ costosa que la
+implantación de un sistema de ficheros y requiere _________ personal
+especializado:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="q1" value="a"> más / más.</label>
+            <label class="opt"><input type="radio" name="q1" value="b"> más / menos.</label>
+            <label class="opt"><input type="radio" name="q1" value="c"> menos / más.</label>
+            <label class="opt"><input type="radio" name="q1" value="d"> menos / menos.</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">2.</div>
+          <div class="question">Si hay datos repetidos en varios lugares, algo más típico de _______________ que
+de ___________________, se pueden producir _____________:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="q2" value="a"> los ficheros / las bases de datos / inconsistencias.</label>
+            <label class="opt"><input type="radio" name="q2" value="b"> las bases de datos / los ficheros / inconsistencias.</label>
+            <label class="opt"><input type="radio" name="q2" value="c"> las bases de datos / los ficheros / redundancias.</label>
+            <label class="opt"><input type="radio" name="q2" value="d"> los ficheros / las bases de datos / redundancias.</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">3.</div>
+          <div class="question">______________________ contiene mayor valor informativo que ______________ porque junto con los datos se almacenan ________________:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="q3" value="a"> Un conjunto de ficheros / una base de datos / las relaciones.</label>
+            <label class="opt"><input type="radio" name="q3" value="b"> Una base de datos / un conjunto de ficheros / las relaciones.</label>
+            <label class="opt"><input type="radio" name="q3" value="c"> Un conjunto de ficheros / una base de datos / los programas.</label>
+            <label class="opt"><input type="radio" name="q3" value="d"> Ninguna de las anteriores</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">4.</div>
+          <div class="question">¿En qué nivel se deben especificar los datos que son de interés para un determinado
+usuario o aplicación?</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="q4" value="a"> Nivel físico.</label>
+            <label class="opt"><input type="radio" name="q4" value="b"> Nivel externo.</label>
+            <label class="opt"><input type="radio" name="q4" value="c"> Nivel lógico o global.</label>
+            <label class="opt"><input type="radio" name="q4" value="d"> Ninguno de los anteriores.</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">5.</div>
+          <div class="question">Los primeros modelos de datos que se emplean en el proceso de creación de una
+base de datos son los modelos:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="q5" value="a"> Físicos.</label>
+            <label class="opt"><input type="radio" name="q5" value="b"> Lógicos.</label>
+            <label class="opt"><input type="radio" name="q5" value="c"> Conceptuales.</label>
+            <label class="opt"><input type="radio" name="q5" value="d"> Ninguna de las anteriores.</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">6.</div>
+          <div class="question">El modelo de datos más empleado en la actualidad es el modelo:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="q6" value="a"> relacional.</label>
+            <label class="opt"><input type="radio" name="q6" value="b"> jerárquico.</label>
+            <label class="opt"><input type="radio" name="q6" value="c"> en red.</label>
+            <label class="opt"><input type="radio" name="q6" value="d"> Ninguno de los anteriores.</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">7.</div>
+          <div class="question">Los tipos de lenguajes que permiten al diseñador de la base de datos especificar los
+elementos de datos de que esta consta se llaman:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="q7" value="a"> Lenguajes de definición de datos.</label>
+            <label class="opt"><input type="radio" name="q7" value="b"> Lenguajes de bases de datos.</label>
+            <label class="opt"><input type="radio" name="q7" value="c"> Lenguajes de manipulación de datos.</label>
+            <label class="opt"><input type="radio" name="q7" value="d"> Ninguna de las anteriores.</label>
+          </div>
+        </div>
+
+        <h4 style="margin-top:12px">Gestión de bases de datos</h4>
+
+        <div class="questionBlock">
+          <div class="qnum">8.</div>
+          <div class="question">Los lenguajes de manipulación de datos que sólo se pueden emplear embebidos en
+otros lenguajes de programación se llaman:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="q8" value="a"> lenguajes huésped.</label>
+            <label class="opt"><input type="radio" name="q8" value="b"> lenguajes autocontenidos.</label>
+            <label class="opt"><input type="radio" name="q8" value="c"> lenguajes duales.</label>
+            <label class="opt"><input type="radio" name="q8" value="d"> Ninguna de las anteriores.</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">9.</div>
+          <div class="question">Una base de datos distribuida es aquella en la que:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="q9" value="a"> Los datos están distribuidos entre diferentes máquinas.</label>
+            <label class="opt"><input type="radio" name="q9" value="b"> El SGBD está ubicado en una única máquina.</label>
+            <label class="opt"><input type="radio" name="q9" value="c"> Los datos y el SGBD están centralizados en una máquina.</label>
+            <label class="opt"><input type="radio" name="q9" value="d"> Ninguna de las anteriores.</label>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- TEST 2 -->
+      <section id="test2" class="card">
+        <div class="summary"><div><strong>TEST 2: Modelado de datos (Entidades, Relaciones y Atributos)</strong></div><div class="small">7 preguntas</div></div>
+
+        <div class="questionBlock">
+          <div class="qnum">1.</div>
+          <div class="question">El conjunto de valores posibles para un atributo recibe el nombre de:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="t2q1" value="a"> Cardinalidad.</label>
+            <label class="opt"><input type="radio" name="t2q1" value="b"> Dominio.</label>
+            <label class="opt"><input type="radio" name="t2q1" value="c"> Entidad.</label>
+            <label class="opt"><input type="radio" name="t2q1" value="d"> Atributo.</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">2.</div>
+          <div class="question">Cuando en una relación reflexiva o en una relación binaria las
+cardinalidades son para una entidad (0,n) y para la otra (1,n), el tipo de
+correspondencia de la relación es:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="t2q2" value="a"> N:M.</label>
+            <label class="opt"><input type="radio" name="t2q2" value="b"> 1:1.</label>
+            <label class="opt"><input type="radio" name="t2q2" value="c"> 1:N.</label>
+            <label class="opt"><input type="radio" name="t2q2" value="d"> Ninguna de las anteriores.</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">3.</div>
+          <div class="question">El tipo de correspondencia para las relaciones débiles suele ser:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="t2q3" value="a"> N:M.</label>
+            <label class="opt"><input type="radio" name="t2q3" value="b"> 1:1.</label>
+            <label class="opt"><input type="radio" name="t2q3" value="c"> 1:N.</label>
+            <label class="opt"><input type="radio" name="t2q3" value="d"> Ninguna de las anteriores.</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">4.</div>
+          <div class="question">La característica por la cual un subtipo, además de sus atributos propios,
+tiene los de su supertipo correspondiente, se llama:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="t2q4" value="a"> Jerarquía.</label>
+            <label class="opt"><input type="radio" name="t2q4" value="b"> Herencia.</label>
+            <label class="opt"><input type="radio" name="t2q4" value="c"> Tipificación.</label>
+            <label class="opt"><input type="radio" name="t2q4" value="d"> Generalización.</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">5.</div>
+          <div class="question">Las relaciones entre una entidad débil y la entidad regular de la que
+depende reciben el nombre de relaciones:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="t2q5" value="a"> Dependientes.</label>
+            <label class="opt"><input type="radio" name="t2q5" value="b"> Regulares.</label>
+            <label class="opt"><input type="radio" name="t2q5" value="c"> Fuertes.</label>
+            <label class="opt"><input type="radio" name="t2q5" value="d"> Débiles.</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">6.</div>
+          <div class="question">El atributo o atributos de una entidad seleccionado/s para identificarla
+recibe/n el nombre de:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="t2q6" value="a"> Atributo identificador principal (AIP).</label>
+            <label class="opt"><input type="radio" name="t2q6" value="b"> Atributo identificador alternativo (AIA).</label>
+            <label class="opt"><input type="radio" name="t2q6" value="c"> Atributo identificador candidato (AIC).</label>
+            <label class="opt"><input type="radio" name="t2q6" value="d"> Ninguna de las anteriores.</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">7.</div>
+          <div class="question">Las relaciones que se establecen entre una entidad y ella misma se
+denominan relaciones:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="t2q7" value="a"> Binarias.</label>
+            <label class="opt"><input type="radio" name="t2q7" value="b"> Reflexivas.</label>
+            <label class="opt"><input type="radio" name="t2q7" value="c"> Ternarias.</label>
+            <label class="opt"><input type="radio" name="t2q7" value="d"> Ninguna de las anteriores.</label>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- TEST 3 -->
+      <section id="test3" class="card">
+        <div class="summary"><div><strong>TEST 3: Transformación E/R -> Relacional</strong></div><div class="small">6 preguntas</div></div>
+
+        <div class="questionBlock">
+          <div class="qnum">1.</div>
+          <div class="question">Las relaciones 1:N originan la mayoría de las veces:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="t3q1" value="a"> Que en la relación correspondiente a la parte N aparezca una clave ajena apuntando a la relación correspondiente a la parte 1.</label>
+            <label class="opt"><input type="radio" name="t3q1" value="b"> Que en la relación correspondiente a la parte 1 aparezca una clave ajena apuntando a la relación correspondiente a la parte N.</label>
+            <label class="opt"><input type="radio" name="t3q1" value="c"> Una nueva tabla</label>
+            <label class="opt"><input type="radio" name="t3q1" value="d"> Ninguna de las anteriores.</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">2.</div>
+          <div class="question">Una relación con tipo de correspondencia 1:1 y cardinalidades (1,1) en un extremo y (0,1) en el otro origina:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="t3q2" value="a"> Una nueva tabla con una clave ajena.</label>
+            <label class="opt"><input type="radio" name="t3q2" value="b"> La aparición de una clave ajena en la tabla a la que corresponda la cardinalidad (1,1).</label>
+            <label class="opt"><input type="radio" name="t3q2" value="c"> La aparición de una clave ajena en la tabla a la que corresponda la cardinalidad (0,1).</label>
+            <label class="opt"><input type="radio" name="t3q2" value="d"> Una nueva tabla con dos claves ajenas.</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">3.</div>
+          <div class="question">Una relación ternaria con cardinalidades (0,1), (0,1) y (0,n) da lugar a una tabla con tres claves ajenas y cuya clave primaria está formada por:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="t3q3" value="a"> una clave ajena que referencia a la clave primaria correspondiente a la entidad que participa con cardinalidad (0,n).</label>
+            <label class="opt"><input type="radio" name="t3q3" value="b"> las tres claves ajenas que apuntan a las claves primarias correspondientes a las tres entidades relacionadas.</label>
+            <label class="opt"><input type="radio" name="t3q3" value="c"> dos claves ajenas que referencian a las claves primarias correspondientes a las entidades que participan con cardinalidad (0,1).</label>
+            <label class="opt"><input type="radio" name="t3q3" value="d"> dos claves ajenas: una que referencia a la clave primaria correspondiente a la entidad que participa con cardinalidad (0,n) y otra que apunta a la clave primaria correspondiente a una de las dos entidades que participan con cardinalidad (0,1).</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">4.</div>
+          <div class="question">Las dependencias en existencia y en identificación se tratan como las relaciones ______ con la diferencia de que en el caso de la dependencia en _______________ la clave ajena propagada también forma parte de la clave primaria:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="t3q4" value="a"> 1:N / existencia.</label>
+            <label class="opt"><input type="radio" name="t3q4" value="b"> N:M / existencia.</label>
+            <label class="opt"><input type="radio" name="t3q4" value="c"> 1:N / identificación.</label>
+            <label class="opt"><input type="radio" name="t3q4" value="d"> N:M / identificación.</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">5.</div>
+          <div class="question">Cuando en una jerarquía total de tipos y subtipos estos últimos difieren en pocos atributos y no presentan relaciones propias, conviene:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="t3q5" value="a"> Crear una tabla para el supertipo y una por cada subtipo.</label>
+            <label class="opt"><input type="radio" name="t3q5" value="b"> Crear una sola tabla para el supertipo y todos los subtipos.</label>
+            <label class="opt"><input type="radio" name="t3q5" value="c"> Crear una tabla para el supertipo y otra para los subtipos.</label>
+            <label class="opt"><input type="radio" name="t3q5" value="d"> Ninguna de las anteriores.</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">6.</div>
+          <div class="question">Los atributos identificadores alternativos de las entidades son _________________ de las relaciones resultantes en el esquema relacional y deben ir identificados con la/s cláusula/s __________________:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="t3q6" value="a"> claves primarias / primary key.</label>
+            <label class="opt"><input type="radio" name="t3q6" value="b"> claves primarias / primary key y not null.</label>
+            <label class="opt"><input type="radio" name="t3q6" value="c"> claves alternativas / unique.</label>
+            <label class="opt"><input type="radio" name="t3q6" value="d"> claves alternativas / not null.</label>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- TEST 4 -->
+      <section id="test4" class="card">
+        <div class="summary"><div><strong>TEST 4: Normalización y dependencias</strong></div><div class="small">7 preguntas</div></div>
+
+        <div class="questionBlock">
+          <div class="qnum">1.</div>
+          <div class="question">Si en una relación un atributo posee varios valores para una misma tupla, podemos decir que la forma normal menos restrictiva que no cumple es la:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="t4q1" value="a"> 2FN.</label>
+            <label class="opt"><input type="radio" name="t4q1" value="b"> 1FN.</label>
+            <label class="opt"><input type="radio" name="t4q1" value="c"> FNBC.</label>
+            <label class="opt"><input type="radio" name="t4q1" value="d"> 3FN.</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">2.</div>
+          <div class="question">La forma normal de Boyce-Codd (FNBC) es más restrictiva que la ______ y menos
+restrictiva que la _____:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="t4q2" value="a"> 3FN / 4FN.</label>
+            <label class="opt"><input type="radio" name="t4q2" value="b"> 2FN / 3FN.</label>
+            <label class="opt"><input type="radio" name="t4q2" value="c"> 4FN / 5FN.</label>
+            <label class="opt"><input type="radio" name="t4q2" value="d"> 4FN / 3FN.</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">3.</div>
+          <div class="question">En la relación Empleado (NSS, NIF, Nombre, Dirección, Localidad, Provincia) se
+da la siguiente dependencia funcional:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="t4q3" value="a"> Dirección → Localidad.</label>
+            <label class="opt"><input type="radio" name="t4q3" value="b"> (Localidad, Provincia) ⇒ NSS.</label>
+            <label class="opt"><input type="radio" name="t4q3" value="c"> Provincia → Localidad.</label>
+            <label class="opt"><input type="radio" name="t4q3" value="d"> NSS ↔ NIF.</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">4.</div>
+          <div class="question">Indica cuál de las siguientes afirmaciones es falsa:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="t4q4" value="a"> Toda relación en 1FN cuya clave primaria consta de un solo atributo se
+encuentra además en 2FN.</label>
+            <label class="opt"><input type="radio" name="t4q4" value="b"> Toda relación en 2FN con menos de dos atributos no clave, se encuentra también
+en 3FN.</label>
+            <label class="opt"><input type="radio" name="t4q4" value="c"> Toda relación en FNBC se encuentra también en 4FN.</label>
+            <label class="opt"><input type="radio" name="t4q4" value="d"> Toda relación en FNBC se encuentra también en 3FN.</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">5.</div>
+          <div class="question">Dada la relación Libro (ISBN, Título, NomAutor, NacionalidadAutor), si sabemos
+que un libro identificado por su ISBN puede haber sido escrito por varios autores,
+¿en qué forma normal se encuentra la relación Libro?</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="t4q5" value="a"> En 1FN.</label>
+            <label class="opt"><input type="radio" name="t4q5" value="b"> En 2FN.</label>
+            <label class="opt"><input type="radio" name="t4q5" value="c"> En 3FN.</label>
+            <label class="opt"><input type="radio" name="t4q5" value="d"> Ninguna respuesta es correcta.</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">6.</div>
+          <div class="question">Sabiendo que un empleado identificado por su código (CodEmp) trabaja en un único
+departamento identificado por su código (CodDep), la forma normal más restrictiva
+en la que se encuentra la relación Empleado (CodEmp, NomEmp, SalEmp, CodDep,
+NomDep) es la:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="t4q6" value="a"> 1FN.</label>
+            <label class="opt"><input type="radio" name="t4q6" value="b"> 2FN.</label>
+            <label class="opt"><input type="radio" name="t4q6" value="c"> 3FN.</label>
+            <label class="opt"><input type="radio" name="t4q6" value="d"> FNBC.</label>
+          </div>
+        </div>
+
+        <div class="questionBlock">
+          <div class="qnum">7.</div>
+          <div class="question">Si en una relación R (A, B, C) sabemos que A→B y que B→C, habrá una
+dependencia transitiva de C respecto de A a través de B si:</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="t4q7" value="a"> B → A.</label>
+            <label class="opt"><input type="radio" name="t4q7" value="b"> B → A.</label>
+            <label class="opt"><input type="radio" name="t4q7" value="c"> A → C.</label>
+            <label class="opt"><input type="radio" name="t4q7" value="d"> A ↔ B.</label>
+          </div>
+        </div>
+
+      </section>
+
+      <div style="display:flex;gap:10px;align-items:center;margin-top:8px">
+        <button type="button" onclick="gradeExam()">Corregir examen</button>
+        <button type="button" class="secondary" onclick="resetExam()">Reiniciar respuestas</button>
+        <div id="scoreBox" style="margin-left:auto" class="small"></div>
+      </div>
+
+    </form>
+
+    <div id="resultsArea"></div>
+
+    <footer>
+      Resultado generado localmente en tu navegador. Puedes descargar la página con "Guardar como" si quieres conservarla.
+    </footer>
+  </div>
+
+  <script>
+    // Respuestas correctas y explicaciones
+    const ANSWERS = {
+      // TEMA1
+      q1: 'a', q2: 'a', q3: 'b', q4: 'b', q5: 'c', q6: 'a', q7: 'a', q8: 'a', q9: 'a',
+      // TEST2
+      t2q1: 'b', t2q2: 'c', t2q3: 'c', t2q4: 'b', t2q5: 'd', t2q6: 'a', t2q7: 'b',
+      // TEST3
+      t3q1: 'a', t3q2: 'c', t3q3: 'c', t3q4: 'c', t3q5: 'b', t3q6: 'c',
+      // TEST4
+      t4q1: 'b', t4q2: 'a', t4q3: 'a', t4q4: 'b', t4q5: 'a', t4q6: 'b', t4q7: 'c'
+    };
+
+    const EXPL = {
+      q1: 'Los SGBD suelen ser más costosos e implican más personal especializado.',
+      q2: 'Los sistemas de ficheros generan duplicidad en varios lugares y por tanto inconsistencias.',
+      q3: 'Una base de datos almacena datos y relaciones entre ellos, por eso tiene más valor informativo.',
+      q4: 'El nivel externo describe la visión de usuario o aplicación.',
+      q5: 'En el diseño se usan primero modelos conceptuales.',
+      q6: 'El modelo relacional es el más usado.',
+      q7: 'Los lenguajes de definición (DDL) permiten especificar elementos de datos.',
+      q8: 'Lenguajes huésped: SQL embebido en otros lenguajes',
+      q9: 'Base de datos distribuida: datos repartidos en varias máquinas.',
+
+      t2q1: 'Dominio = conjunto de valores válidos para un atributo.',
+      t2q2: 'Cardinalidades (0,n) y (1,n) implican 1:N.',
+      t2q3: 'Las entidades débiles suelen participar en 1:N respecto de su entidad propietaria.',
+      t2q4: 'Herencia: los subtipos heredan atributos del supertipo.',
+      t2q5: 'Relaciones entre entidad débil y su regular se consideran débiles.',
+      t2q6: 'Atributo identificador principal = AIP.',
+      t2q7: 'Relaciones de una entidad consigo misma son reflexivas.',
+
+      t3q1: 'En 1:N la clave foránea va en la parte N apuntando al 1.',
+      t3q2: 'La entidad opcional (0,1) suele recibir la clave foránea.',
+      t3q3: 'La clave primaria en este caso suele componerse de las claves ajenas de las entidades con cardinalidad (0,1).',
+      t3q4: 'Las dependencias se tratan como 1:N y en identificación la FK forma parte de la PK.',
+      t3q5: 'Si los subtipos difieren poco y no tienen relaciones propias, mejor una sola tabla.',
+      t3q6: 'Los identificadores alternativos se implementan como constraints UNIQUE.',
+
+      t4q1: '1FN exige atomicidad: no multivalorados.',
+      t4q2: 'FNBC (BCNF) es más restrictiva que 3FN y menos que 4FN.',
+      t4q3: 'Dirección → Localidad es razonable; las otras afirmaciones no se deducen.',
+      t4q4: 'La afirmación b) es la falsa: no garantiza 3FN sólo por número de atributos.',
+      t4q5: 'Si un mismo ISBN tiene varios autores, hay multivaloración: no cumple 1FN bien.',
+      t4q6: 'Existe dependencia parcial: NomDep depende de CodDep, no de CodEmp → 2FN.',
+      t4q7: 'Si A→B y B→C entonces A→C (dependencia transitiva) => A→C.'
+    };
+
+    function scrollToTest(id){
+      document.getElementById(id).scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    function gradeExam(){
+      const form = document.getElementById('examForm');
+      const data = new FormData(form);
+      let total = 0, correct = 0;
+      const keys = Object.keys(ANSWERS);
+      const resultsArea = document.getElementById('resultsArea');
+      resultsArea.innerHTML = '';
+
+      // Score per test grouping
+      const groups = { tema1:[], test2:[], test3:[], test4:[] };
+
+      keys.forEach(k => {
+        total++;
+        const given = data.get(k);
+        const ok = ANSWERS[k];
+        const isCorrect = given === ok;
+        if(isCorrect) correct++;
+
+        // determine group
+        if(k.startsWith('t2')) groups.test2.push({k,given,ok});
+        else if(k.startsWith('t3')) groups.test3.push({k,given,ok});
+        else if(k.startsWith('t4')) groups.test4.push({k,given,ok});
+        else groups.tema1.push({k,given,ok});
+
+        // individual feedback
+        const div = document.createElement('div');
+        div.className = 'card ' + (isCorrect? 'correct':'incorrect');
+        div.style.marginTop = '10px';
+        const qtitle = document.createElement('div'); qtitle.innerHTML = '<strong>'+k.toUpperCase()+'</strong> — '+(isCorrect? 'Correcta':'Incorrecta');
+        const qans = document.createElement('div'); qans.className='small'; qans.textContent = 'Tu respuesta: '+(given||'(sin responder)') + ' — Respuesta correcta: '+ok;
+        const expl = document.createElement('div'); expl.className='explanation'; expl.textContent = EXPL[k] || '';
+        div.appendChild(qtitle); div.appendChild(qans); div.appendChild(expl);
+        resultsArea.appendChild(div);
+      });
+
+      const percent = Math.round((correct/total)*100);
+      const scoreBox = document.getElementById('scoreBox');
+      scoreBox.innerHTML = '<strong>Nota:</strong> '+correct+' / '+total+' ('+percent+'%)';
+
+      // Summary per test
+      const summaryCard = document.createElement('div');
+      summaryCard.className = 'card';
+      const shtml = [];
+      function summarise(arr,name){
+        const totalg = arr.length;
+        const okg = arr.filter(x=>x.given===x.ok).length;
+        shtml.push('<div><strong>'+name+':</strong> '+okg+' / '+totalg+' aciertos</div>');
+      }
+      summarise(groups.tema1,'Tema 1'); summarise(groups.test2,'Test 2'); summarise(groups.test3,'Test 3'); summarise(groups.test4,'Test 4');
+      summaryCard.innerHTML = shtml.join('\n');
+      resultsArea.prepend(summaryCard);
+
+      // Scroll to results
+      resultsArea.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    function resetExam(){
+      if(!confirm('¿Reiniciar todas las respuestas?')) return;
+      document.getElementById('examForm').reset();
+      document.getElementById('resultsArea').innerHTML = '';
+      document.getElementById('scoreBox').innerHTML = '';
+    }
+
+  </script>
+</body>
+</html>
